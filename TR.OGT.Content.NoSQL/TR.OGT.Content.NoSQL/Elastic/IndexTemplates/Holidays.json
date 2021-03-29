@@ -1,0 +1,24 @@
+{
+  "index_patterns": [ "content_holidays" ],
+  "settings": {
+    "number_of_shards": 1,
+    "number_of_replicas": 1,
+    "index.unassigned.node_left.delayed_timeout": "15m",
+    "index.mapping.ignore_malformed": true
+  },
+  "mappings": {
+    "properties": {
+      "CountryCode": { "type": "keyword" },
+      "SubCountryCode": { "type": "keyword" },
+      "HolidayYear": { "type": "integer" },
+      "HolidaysObserved": {
+        "type": "nested",
+        "properties": {
+          "Name": { "type": "keyword" },
+          "StartDate": { "type": "date" },
+          "EndDate": { "type": "date" }
+        }
+      }
+    }
+  }
+}

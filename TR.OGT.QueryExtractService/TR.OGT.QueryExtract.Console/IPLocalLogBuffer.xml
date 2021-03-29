@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <SendToGTNWebService>N</SendToGTNWebService>
+  <!-- Send Log Records to old GTN Logging Webservices -->
+  <SendToElasticSearch>N</SendToElasticSearch>
+  <!-- Send Log Records to ElasticSearch -->
+  <SerializedOutput></SerializedOutput>
+  <!-- Serialized Message Output (bulk ES request dump) - empty means don't record -->
+  <ErrorOutput></ErrorOutput>
+  <!-- Error Directory Output File (defaults to sanconfig/temp if blank) -->
+  <MaxBulkJSONSize>5242880</MaxBulkJSONSize>
+  <!-- Max Size (default 5MB) for Serialized ES Requests -->
+  <MaxBatchJSONSize>10000</MaxBatchJSONSize>
+  <!-- Max Num  (default 10K) of  Serialized Records Per Request -->
+  <SSLClientCert></SSLClientCert>
+  <!-- Full Path Filename of client cert file for connection to nginx/ES -->
+  <SSLClientCertPW>ucIoONBWGcvnk0rc0cVx0A==</SSLClientCertPW>
+  <!-- Cert File Signing Password (encrypted) -->
+</configuration>

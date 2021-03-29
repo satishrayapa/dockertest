@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dbconfig>
+  <application>
+    <!-- it looks like this name is hardcoded in the log library,  -->
+    <!-- not sure it can be changed  -->
+    <name>ftzweb</name>
+    <connectioninfo>
+      <name>userauth</name>
+      <server></server>
+      <userid></userid>
+      <password></password>
+      <catalog></catalog>
+    </connectioninfo>
+  </application>
+</dbconfig>

@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Collections.Concurrent" Version="4.3.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
+    <PackageReference Include="TR.OGT.Common" Version="21.2.15" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TR.OGT.ChangeLedger.Common\TR.OGT.ChangeLedger.Common.csproj" />
+    <ProjectReference Include="..\TR.OGT.ChangeLedger.Domain\TR.OGT.ChangeLedger.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

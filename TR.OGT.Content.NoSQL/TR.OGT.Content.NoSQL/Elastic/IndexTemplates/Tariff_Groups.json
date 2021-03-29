@@ -1,0 +1,251 @@
+{
+  "index_patterns": [ "content_tariff_*" ],
+  "settings": {
+    "number_of_shards": 1,
+    "number_of_replicas": 1,
+    "index.unassigned.node_left.delayed_timeout": "15m",
+    "index.mapping.ignore_malformed": true
+  },
+  "aliases": {
+    "Content_Charges": {}
+  },
+  "mappings": {
+    "properties": {
+      "HSNumber": { "type": "keyword" },
+      "HSBreakout": {
+        "properties": {
+          "Chapter": { "type": "keyword" },
+          "Heading": { "type": "keyword" },
+          "Subheading": { "type": "keyword" }
+        }
+      },
+      "UOMs": { "type": "text" },
+      "Uses": { "type": "keyword" },
+      "ProdClassificationDetailGUID": { "type": "keyword" },
+      "ProdClassificationGUID": { "type": "keyword" },
+      "ProdClassificationName": { "type": "keyword" },
+      "CountryCodes": { "type": "keyword" },
+      "StartDate": { "type": "date" },
+      "EndDate": { "type": "date" },
+      "ECNHSCorrelations": {
+        "type": "nested",
+        "properties": {
+          "ECNNum": { "type": "keyword" },
+          "RegListID": { "type": "keyword" },
+          "RegListName": { "type": "keyword" },
+          "CountryCode": { "type": "keyword" },
+          "StartDate": { "type": "date" },
+          "EndDate": { "type": "date" }
+        }
+      },
+      "AdditionalCodes": {
+        "type": "nested",
+        "properties": {
+          "AdditionalCode": { "type": "keyword" },
+          "CountryCodes": { "type": "keyword" },
+          "Append": { "type": "boolean" },
+          "Mandatory": { "type": "boolean" },
+          "Type": { "type": "keyword" },
+          "StartDate": { "type": "date" },
+          "EndDate": { "type": "date" },
+          "Description": {
+            "type": "nested",
+            "properties": {
+              "CultureCode": { "type": "keyword" },
+              "DescriptionText": { "type": "text" }
+            }
+          }
+        }
+      },
+      "DeclarableElements": {
+        "type": "nested",
+        "properties": {
+          "CultureCode": { "type": "keyword" },
+          "DeclarableElement": { "type": "text" },
+          "SortOrder": { "type": "keyword" },
+          "StartDate": { "type": "date" },
+          "EndDate": { "type": "date" }
+        }
+      },
+      "PrivilegeCode": {
+        "type": "nested",
+        "properties": {
+          "CultureCode": { "type": "keyword" },
+          "PrivilegeCode": { "type": "text" }
+        }
+      },
+      "RelatedHS": {
+        "type": "nested",
+        "properties": {
+          "RelatedHSNum": { "type": "keyword" },
+          "Note": { "type": "text" },
+          "StartDate": { "type": "date" },
+          "EndDate": { "type": "date" }
+        }
+      },
+      "Controls": {
+        "type": "nested",
+        "properties": {
+          "HSNumber": { "type": "keyword" },
+          "Control": { "type": "keyword" },
+          "ControlType": { "type": "keyword" },
+          "IssuingCountries": { "type": "keyword" },
+          "ApplicableCountries": { "type": "keyword" },
+          "AttachedDocuments": { "type": "boolean" },
+          "StartDate": { "type": "date" },
+          "EndDate": { "type": "date" },
+          "Agencies": {
+            "type": "nested",
+            "properties": {
+              "Country": { "type": "keyword" },
+              "Acronym": { "type": "keyword" },
+              "AgencyGUID": { "type": "keyword" }
+            }
+          }
+        }
+      },
+      "Quotas": {
+        "type": "nested",
+        "properties": {
+          "Level": { "type": "keyword" },
+          "Type": { "type": "keyword" },
+          "UOM": { "type": "keyword" },
+          "FillDate": { "type": "date" },
+          "QuotaStartDate": { "type": "date" },
+          "QuotaEndDate": { "type": "date" },
+          "IssuingCountries": { "type": "keyword" },
+          "ApplicableCountries": { "type": "keyword" }
+        }
+      },
+      "Notes": {
+        "type": "nested",
+        "properties": {
+          "HSNumber": { "type": "keyword" },
+          "NoteNumber": { "type": "keyword" },
+          "NoteType": { "type": "keyword" },
+          "NoteStartDate": { "type": "date" },
+          "NoteEndDate": { "type": "date" },
+          "Text": {
+            "type": "nested",
+            "properties": {
+              "CultureCode": { "type": "keyword" },
+              "NoteText": { "type": "text" }
+            }
+          }
+        }
+      },
+      "Rulings": {
+        "type": "nested",
+        "properties": {
+          "HSNumber": { "type": "keyword" },
+          "IssuingCountries": { "type": "keyword" },
+          "RulingReferenceCode": { "type": "keyword" },
+          "RulingType": { "type": "keyword" },
+          "RulingStartDate": { "type": "date" },
+          "RulingEndDate": { "type": "date" },
+          "Text": {
+            "type": "nested",
+            "properties": {
+              "CultureCode": { "type": "keyword" },
+              "TextType": { "type": "keyword" },
+              "RulingText": { "type": "text" }
+            }
+          }
+        }
+      },
+      "Charges": {
+        "type": "nested",
+        "properties": {
+          "IssuingCountries": { "type": "keyword" },
+          "ApplicableCountries": { "type": "keyword" },
+          "ChargeDetailGUID": { "type": "keyword" },
+          "UIRate": { "type": "keyword" },
+          "CurrencyCode": { "type": "keyword" },
+          "Calculation": {
+            "type": "nested",
+            "properties": {
+              "Rate": {
+                "type": "nested",
+                "properties": {
+                  "Category": { "type": "keyword" },
+                  "Formula": { "type": "keyword" },
+                  "RateComponents": {
+                    "type": "nested",
+                    "properties": {
+                      "Type": { "type": "keyword" },
+                      "Rate": { "type": "float" },
+                      "Math": { "type": "keyword" },
+                      "UOM": { "type": "keyword" },
+                      "UOMAmount": { "type": "float" }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "RestrictedDetails": {
+            "properties": {
+              "CountryCode": { "type": "keyword" },
+              "RestrictedCode": { "type": "keyword" },
+              "AdditionalCode": { "type": "keyword" },
+              "Restriction": { "type": "keyword" },
+              "CompanyList": {
+                "type": "nested",
+                "properties": {
+                  "CultureCode": { "type": "keyword" },
+                  "CompanyName": { "type": "text" }
+                }
+              }
+            }
+          },
+          "MinUICharge": { "type": "keyword" },
+          "MaxUICharge": { "type": "keyword" },
+          "ChargeStartDate": { "type": "date" },
+          "ChargeEndDate": { "type": "date" },
+          "ChargeUse": { "type": "keyword" },
+          "ChargeType": { "type": "keyword" },
+          "ChargeDetailType": {
+            "type": "nested",
+            "properties": {
+              "ChargeDetailTypeCode": { "type": "keyword" }
+            }
+          },
+          "ChargeProgram": {
+            "type": "nested",
+            "properties": {
+              "ChargeProgramCode": { "type": "keyword" }
+            }
+          },
+          "AttachedDocuments": { "type": "boolean" },
+          "Notes": {
+            "type": "nested",
+            "properties": {
+              "CultureCode": { "type": "keyword" },
+              "NoteText": { "type": "text" }
+            }
+          },
+          "Quotas": {
+            "type": "nested",
+            "properties": {
+              "Level": { "type": "keyword" },
+              "Type": { "type": "keyword" },
+              "UOM": { "type": "keyword" },
+              "FillDate": { "type": "date" },
+              "QuotaStartDate": { "type": "date" },
+              "QuotaEndDate": { "type": "date" }
+            }
+          }
+        },
+        "Descriptions": {
+          "type": "nested",
+          "properties": {
+            "CultureCode": { "type": "keyword" },
+            "DescriptionText": { "type": "text" },
+            "SortOrder": { "type": "keyword" },
+            "DisplayFlag": { "type": "keyword" }
+          }
+        }
+      }
+    }
+  }
+}

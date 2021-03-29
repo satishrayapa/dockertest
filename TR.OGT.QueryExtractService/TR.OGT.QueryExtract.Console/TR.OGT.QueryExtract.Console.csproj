@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="3.3.101" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TR.OGT.QueryExtract.Data\TR.OGT.QueryExtract.Data.csproj" />
+    <ProjectReference Include="..\TR.OGT.QueryExtract.Domain\TR.OGT.QueryExtract.Domain.csproj" />
+    <ProjectReference Include="..\TR.OGT.QueryExtract.Infrastructure\TR.OGT.QueryExtract.Infrastructure.csproj" />
+    <ProjectReference Include="..\TR.OGT.QueryExtract.Queue\TR.OGT.QueryExtract.Queue.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="IPLocalLogBuffer.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="logconfig.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>

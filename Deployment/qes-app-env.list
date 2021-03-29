@@ -1,0 +1,4 @@
+OGT_ENVIRONMENT=content-dev
+OGT_SERVER_ROLE=query-extract
+OGT_CONFIG_SERVER_URL=http://ogt-app-config-pre.4251.aws-int.thomsonreuters.com
+OGT_CLOUD=Y

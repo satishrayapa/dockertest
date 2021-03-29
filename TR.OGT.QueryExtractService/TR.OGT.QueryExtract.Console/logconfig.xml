@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logconfig>
+  <!-- <smtp_server>mail.integrationpoint.net</smtp_server> -->
+  <enable_query_hash_logging release="15.1" owner="dpenland">true</enable_query_hash_logging>
+  <!--valid values are true or false,  if missing, invalid, or blank it defaults to false. This indicates whether or not query hash logging (a tool to reduce the number of times a given query is logged) is enabled for the server. -->
+
+  <log_to_gtn>N</log_to_gtn>
+  <log_to_disk>Y</log_to_disk>
+
+  <application name="FTZLink">C:\rep\ogt-content_nosql-poc\TR.OGT.QueryExtractService\TR.OGT.QueryExtract.Console\bin\Debug\netcoreapp3.1\logs\doc.txt</application>
+</logconfig>
+<!--
+
+	the follwoing are the supported format rules for the date field
+	
+	the default date specifier if not provided is [yyyy_MM_dd]
+
+	d : The day of the month. Single-digit days will not have a leading zero. 
+	dd : The day of the month. Single-digit days will have a leading zero. 
+	ddd : The abbreviated name of the day of the week, as defined in AbbreviatedDayNames. 
+	dddd : The full name of the day of the week, as defined in DayNames. 
+	M : The numeric month. Single-digit months will not have a leading zero. 
+	MM : The numeric month. Single-digit months will have a leading zero. 
+	MMM : The abbreviated name of the month, as defined in AbbreviatedMonthNames. 
+	MMMM : The full name of the month, as defined in MonthNames. 
+	y : The year without the century. If the year without the century is less than 10, the year is displayed with no leading zero. 
+	yy : The year without the century. If the year without the century is less than 10, the year is displayed with a leading zero. 
+	yyyy : The year in four digits, including the century. 
+	gg :The period or era. This pattern is ignored if the date to be formatted does not have an associated period or era string. 
+	h : The hour in a 12-hour clock. Single-digit hours will not have a leading zero. 
+	hh : The hour in a 12-hour clock. Single-digit hours will have a leading zero. 
+	H : The hour in a 24-hour clock. Single-digit hours will not have a leading zero. 
+	HH : The hour in a 24-hour clock. Single-digit hours will have a leading zero. 
+	m : The minute. Single-digit minutes will not have a leading zero. 
+	mm : The minute. Single-digit minutes will have a leading zero. 
+	s : The second. Single-digit seconds will not have a leading zero. 
+	ss : The second. Single-digit seconds will have a leading zero. 
+	f : The fraction of a second in single-digit precision. The remaining digits are truncated. 
+	ff : The fraction of a second in double-digit precision. The remaining digits are truncated. 
+	fff : The fraction of a second in three-digit precision. The remaining digits are truncated. 
+	ffff : The fraction of a second in four-digit precision. The remaining digits are truncated. 
+	fffff : The fraction of a second in five-digit precision. The remaining digits are truncated. 
+	ffffff : The fraction of a second in six-digit precision. The remaining digits are truncated. 
+	fffffff : The fraction of a second in seven-digit precision. The remaining digits are truncated. 
+	t : The first character in the AM/PM designator defined in AMDesignator or PMDesignator. 
+	tt : The AM/PM designator defined in AMDesignator or PMDesignator. 
+	z : The time zone offset ("+" or "-" followed by the hour only). Single-digit hours will not have a leading zero. For example, Pacific Standard Time is "-8". 
+	zz : The time zone offset ("+" or "-" followed by the hour only). Single-digit hours will have a leading zero. For example, Pacific Standard Time is "-08". 
+	zzz : The full time zone offset ("+" or "-" followed by the hour and minutes). Single-digit hours and minutes will have leading zeros. For example, Pacific Standard Time is "-08:00". 
+	 
+-->
